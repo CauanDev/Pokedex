@@ -18,14 +18,21 @@ const renderPokemon = async (pokemon) =>{
   
     if(data)
     {
-      document.querySelector('.form input').value = ''
       pokemonImage.src = `${data.sprites.versions['generation-v']['black-white']['animated']['front_default']}`
+      setTimeout(()=>{
+      document.querySelector('.form input').value = ''      
       pokemonName.innerHTML = data.name
       pokemonId.innerHTML =data.id    
       number = data.id;
+      },100)
+      
     }
    else
    {
+     pokemonImage.src = ''
+     pokemonName.innerHTML = ''
+     pokemonId.innerHTML = ''
+   
      alert('Pokemon não encontrado, tente novamente!')
    }
 }
