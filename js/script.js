@@ -19,12 +19,10 @@ const renderPokemon = async (pokemon) =>{
     if(data)
     {
       pokemonImage.src = `${data.sprites.versions['generation-v']['black-white']['animated']['front_default']}`
-      setTimeout(()=>{
       document.querySelector('.form input').value = ''      
       pokemonName.innerHTML = data.name
       pokemonId.innerHTML =data.id    
       number = data.id;
-      },100)
       
     }
    else
